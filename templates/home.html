@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <h1> Homepage !</h1>
+    <br />
+    {% for p in post %}
+        <h1>{{ p.title }}</h1>
+        <p> By {{ p.author }}</p>
+        <p> {{ p.content }}</p>
+    {% endfor %}
+
+</body>
+</html>
