@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
+{% extends "layout.html" %}
 
-    </title>
-</head>
+{% block content %}
+{% for p in post %}
+    <article class="media content-section">
+        <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ p.author }}</a>
+            <small class="text-muted">{{ p.date_posted }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ p.title }}</a></h2>
+        <p class="article-content">{{ p.content }}</p>
+        </div>
+    </article>
+{% endfor %}
 
-<body>
-    <h1> Homepage !</h1>
-    <br />
-    {% for p in post %}
-        <h1>{{ p.title }}</h1>
-        <p> By {{ p.author }}</p>
-        <p> {{ p.content }}</p>
-    {% endfor %}
-
-</body>
-</html>
+{% endblock  content %}
