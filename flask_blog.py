@@ -5,6 +5,8 @@ posts=[{ "author":"Joe" ,"title" :"Blog post 1","content":"This is my first blog
 
 app = Flask(__name__)
 
+app.config["SECRET_KEY"]= "05f9d68146e9379ac7ce72f92b0ecc2c"
+
 @app.route("/")
 @app.route("/home")
 def home():
