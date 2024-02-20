@@ -31,6 +31,8 @@ def login():
         if form.email.data=="admin@blog.com" and form.password.data=="password":
             flash(f'Succesful login !',category="success")
             return redirect(url_for("home"))
+        else:
+            flash("Login Unsuccesful. Please check password and email !",category="danger")
     return render_template("login.html",title="Login",form=form)
 
 if __name__=="__main__":
