@@ -1,11 +1,9 @@
-from flask import Flask,render_template,url_for,flash,redirect
-from forms import RegistrationForm,LoginForm
+from flask import render_template,url_for,flash,redirect
+from flask_blog.forms import RegistrationForm,LoginForm
+from flask_blog import app
 
 posts=[{ "author":"Joe" ,"title" :"Blog post 1","content":"This is my first blog post","date_posted":"12/3/2020"},{"author":"minnies","title":"Mouse","content":"I swear i am the real minnie mouse !","date_posted":"15/6/2020"}]
 
-app = Flask(__name__)
-
-app.config["SECRET_KEY"]= "05f9d68146e9379ac7ce72f92b0ecc2c"
 
 @app.route("/")
 @app.route("/home")
@@ -34,7 +32,3 @@ def login():
         else:
             flash("Login Unsuccesful. Please check password and email !",category="danger")
     return render_template("login.html",title="Login",form=form)
-
-if __name__=="__main__":
-    app.run(debug=True)
-
