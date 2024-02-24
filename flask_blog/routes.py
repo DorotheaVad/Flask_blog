@@ -56,4 +56,5 @@ def logout():
 @app.route("/my_account")
 @login_required
 def account():
-    return render_template("account.html",title="My Account")
+    image_file=url_for("static",filename="profile_pics/"+current_user.image_file)
+    return render_template("account.html",title="My Account",image_file=image_file)
